@@ -86,9 +86,9 @@
     "/chamber/about/requirements": "b26ca004e35717c1",
     "/chamber/news": "238efb6b2a34ff52",
     "/mmea": "30f09c2cb4c9fa5b",
-    "/mmea/about": "94498eb127fb5228",
+    "/mmea/about": "d538cb3f0e678ee7",
     "/mmea/about/missions": "3cd5d4fc951f1020",
-    "/mmea/about/platforms": "228a126ffed2c527",
+    "/mmea/about/platforms": "595d053950c0a713",
     "/mmea/about/requirements": "803afd7619c29acc",
     "/mmea/news": "2a16985c45ba2285"
   },
@@ -142,7 +142,7 @@
       "title": "Moon & Mars Exploration Analog (MMEA)"
     },
     {
-      "content_hash": "94498eb127fb5228",
+      "content_hash": "d538cb3f0e678ee7",
       "direct_url": "https://analogstudies.jsc.nasa.gov/mmea/about",
       "mirror_url": "https://oht8woowi8yait9n.github.io/analogstudies/mmea/about",
       "priority": "0.85",
@@ -158,7 +158,7 @@
       "title": "MMEA \u2014 Participant Requirements & Selection Criteria"
     },
     {
-      "content_hash": "228a126ffed2c527",
+      "content_hash": "595d053950c0a713",
       "direct_url": "https://analogstudies.jsc.nasa.gov/mmea/about/platforms",
       "mirror_url": "https://oht8woowi8yait9n.github.io/analogstudies/mmea/about/platforms",
       "priority": "0.9",

@@ -280,6 +280,35 @@ def fetch_angular_bundle(session: requests.Session) -> tuple[str, str]:
     return main_js_name, r_js.text
 
 
+MMEA_IMAGE_FILES = [
+    "TransitVehicle-exteriorPhoto.jpg",
+    "TransitVehicle-floorplan-level1.png",
+    "TransitVehicle-floorplan-level2and3.png",
+    "SurfaceHabitat-exteriorIllustration.png",
+    "SurfaceHabitat-floorplan.png",
+    "RoverVehicle-topAndSideViewIllustration.png",
+    "RoverVehicle-interiorPhotos.png",
+]
+
+
+def mirror_mmea_images(session: requests.Session) -> None:
+    """Download the 7 MMEA platform images into assets/images/mmea/ so GitHub Pages serves them directly."""
+    img_dir = os.path.join(BASE_DIR, "assets", "images", "mmea")
+    os.makedirs(img_dir, exist_ok=True)
+    for fname in MMEA_IMAGE_FILES:
+        dest = os.path.join(img_dir, fname)
+        if os.path.exists(dest) and os.path.getsize(dest) > 0:
+            continue
+        url = f"{SITE_ORIGIN}/assets/images/mmea/{fname}"
+        try:
+            r = session.get(url, timeout=20)
+            if r.status_code == 200 and r.content:
+                with open(dest, "wb") as f:
+                    f.write(r.content)
+        except Exception as e:
+            print(f"  [!] Image mirror warning ({fname}): {e}")
+
+
 def extract_js_strings_for_selector(js_text: str, selector: str) -> list[str]:
     """
     Extract all literal text nodes `c(idx, "...")` from the Angular Ivy component
@@ -802,17 +831,17 @@ def build_pages(js_text: str, live_data: dict) -> list[dict]:
         <li><strong>Hygiene Module:</strong> 58 sq. ft.</li>
       </ul>
       <div class="figure-box">
-        <img src="{SITE_ORIGIN}/assets/images/mmea/TransitVehicle-exteriorPhoto.jpg" alt="MMEA Transit Vehicle - External View" />
-        <img src="{SITE_ORIGIN}/assets/images/mmea/TransitVehicle-floorplan-level1.png" alt="MMEA Transit Vehicle - Level 1 Floorplan" />
-        <img src="{SITE_ORIGIN}/assets/images/mmea/TransitVehicle-floorplan-level2and3.png" alt="MMEA Transit Vehicle - Levels 2 and 3 Floorplan" />
+        <img src="{GH_PAGES_BASE}/assets/images/mmea/TransitVehicle-exteriorPhoto.jpg" alt="MMEA Transit Vehicle - External View" />
+        <img src="{GH_PAGES_BASE}/assets/images/mmea/TransitVehicle-floorplan-level1.png" alt="MMEA Transit Vehicle - Level 1 Floorplan" />
+        <img src="{GH_PAGES_BASE}/assets/images/mmea/TransitVehicle-floorplan-level2and3.png" alt="MMEA Transit Vehicle - Levels 2 and 3 Floorplan" />
         <div class="figure-caption"><strong>Figure 1:</strong> Transit Vehicle. The core module has three levels and two adjoining modules (hydroponics and hygiene).</div>
       </div>
 
       <h3>2. Surface Habitat (~1,700 sq. ft.)</h3>
       <p>The Surface Habitat is a one-story 3D printed habitat built to simulate habitation on the Martian surface (Figure 2). It has multiple rooms and a covered outside area that can support both physical EVAs on a sand surface and clean spaces for VR EVAs.</p>
       <div class="figure-box">
-        <img src="{SITE_ORIGIN}/assets/images/mmea/SurfaceHabitat-exteriorIllustration.png" alt="MMEA Surface Habitat - External Illustration" />
-        <img src="{SITE_ORIGIN}/assets/images/mmea/SurfaceHabitat-floorplan.png" alt="MMEA Surface Habitat - Floorplan" />
+        <img src="{GH_PAGES_BASE}/assets/images/mmea/SurfaceHabitat-exteriorIllustration.png" alt="MMEA Surface Habitat - External Illustration" />
+        <img src="{GH_PAGES_BASE}/assets/images/mmea/SurfaceHabitat-floorplan.png" alt="MMEA Surface Habitat - Floorplan" />
         <div class="figure-caption"><strong>Figure 2:</strong> Surface Habitat. The total interior area is ~1700 ft<sup>2</sup>.</div>
       </div>
 
@@ -820,8 +849,8 @@ def build_pages(js_text: str, live_data: dict) -> list[dict]:
       <p>The Rover Vehicle is a simulated transport unit that contains two driver seats, two beds, a nonflushable toilet, and a small samples airlock. It can house two participants for multiple days depending on food/water supply and operational requirements. It is anticipated that it will serve as a closed, habitable volume constrained space for high task cadence during short term occupancy (3 days/2 nights, for example). It simulates a vehicle to transfer a crew of two to exploration sites far from the main habitat, physically separating the crew into two teams for specified periods and increasing communication complexity between the teams, and between the teams and MCC.</p>
       <p>The Rover has simulated active views of a planetary surface for driving via monitors located in front of the driver seats. Crew can also don VR and drive the Rover to locations far from the Surface Habitat to perform simulated Extra Vehicular Activities (EVAs). During the surface exploration phase, the Rover can be accessed from the Surface Habitat via an airlock.</p>
       <div class="figure-box">
-        <img src="{SITE_ORIGIN}/assets/images/mmea/RoverVehicle-topAndSideViewIllustration.png" alt="MMEA Rover Vehicle - Top and Side View Illustrations" />
-        <img src="{SITE_ORIGIN}/assets/images/mmea/RoverVehicle-interiorPhotos.png" alt="MMEA Rover Vehicle - Interior Photos" />
+        <img src="{GH_PAGES_BASE}/assets/images/mmea/RoverVehicle-topAndSideViewIllustration.png" alt="MMEA Rover Vehicle - Top and Side View Illustrations" />
+        <img src="{GH_PAGES_BASE}/assets/images/mmea/RoverVehicle-interiorPhotos.png" alt="MMEA Rover Vehicle - Interior Photos" />
         <div class="figure-caption"><strong>Figure 3:</strong> Rover Vehicle. The vehicle has two hatches that can be attached to an airlock or allow direct ingress and egress.</div>
       </div>
     </section>
@@ -1412,6 +1441,7 @@ def main():
     print("[2/4] Fetching Angular SPA bundle from analogstudies.jsc.nasa.gov...")
     main_js_name, js_text = fetch_angular_bundle(session)
     print(f"      Downloaded {main_js_name} ({len(js_text):,} bytes)")
+    mirror_mmea_images(session)
 
     print("[3/4] Pre-rendering static HTML mirror pages...")
     rendered_pages = build_pages(js_text, live_data)
