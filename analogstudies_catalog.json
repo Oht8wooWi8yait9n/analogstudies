@@ -1,0 +1,194 @@
+{
+  "bundleName": "main-4ALVKTJ5.js",
+  "externalReferences": [
+    {
+      "priority": "0.85",
+      "title": "20-Foot Chamber at NASA Johnson Space Center (HESTIA Facility)",
+      "url": "https://www.nasa.gov/setmo/facilities/20-foot-chamber/"
+    },
+    {
+      "priority": "0.80",
+      "title": "Human Exploration System Test-Bed for Integration and Advancement (HESTIA) Support of Future NASA Deep-Space Missions (NTRS 20160003488 PDF)",
+      "url": "https://ntrs.nasa.gov/api/citations/20160003488/downloads/20160003488.pdf"
+    },
+    {
+      "priority": "0.85",
+      "title": "NASA Analog Missions Overview",
+      "url": "https://www.nasa.gov/analog-missions/"
+    },
+    {
+      "priority": "0.85",
+      "title": "NASA Seeks Volunteers for Yearlong Simulated Mission to Moon, Mars (MMEA)",
+      "url": "https://www.nasa.gov/hrp/nasa-seeks-volunteers-for-yearlong-simulated-mission-to-moon-mars/"
+    },
+    {
+      "priority": "0.80",
+      "title": "NASA Altitude Chambers Mission Overview",
+      "url": "https://www.nasa.gov/mission/altitude-chambers/"
+    },
+    {
+      "priority": "0.80",
+      "title": "Analog Missions: Why Do We Use Analogs?",
+      "url": "https://www.nasa.gov/reference/analog-missions-why-do-we-use-analogs/"
+    },
+    {
+      "priority": "0.80",
+      "title": "Step 1: Earth Analogs Help Advance Missions to Moon, Mars",
+      "url": "https://www.nasa.gov/humans-in-space/step-1-earth-analogs-help-advance-missions-to-moon-mars/"
+    },
+    {
+      "priority": "0.75",
+      "title": "Privacy Act of 1974; System of Records Notice \u2014 Human Experimental and Research Data Record (NASA 10HERD)",
+      "url": "https://www.federalregister.gov/documents/2015/11/05/2015-28254/privacy-act-of-1974-privacy-act-system-of-records"
+    }
+  ],
+  "ghPagesBase": "https://oht8woowi8yait9n.github.io/analogstudies",
+  "liveData": {
+    "chamberStatus": {
+      "AcceptingApplications": true,
+      "ID": 19,
+      "Name": "chamber",
+      "Note": null
+    },
+    "countriesCount": 252,
+    "mmeaStatus": {
+      "AcceptingApplications": true,
+      "ID": 20,
+      "Name": "mmea",
+      "Note": null
+    },
+    "nasaOfficial": {
+      "Email": "william.b.vessey@nasa.gov",
+      "Name": "Brandon Vessey",
+      "Role": "nasaOfficial"
+    },
+    "platforms": [
+      {
+        "AcceptingApplications": true,
+        "ID": 19,
+        "Name": "Chamber",
+        "Note": null
+      },
+      {
+        "AcceptingApplications": true,
+        "ID": 20,
+        "Name": "MMEA",
+        "Note": null
+      }
+    ],
+    "usStatesCount": 51
+  },
+  "pageHashes": {
+    "/": "c3bfd59f75849915",
+    "/apply": "1431313ecb31463a",
+    "/chamber": "4ac2ea77696a0eaf",
+    "/chamber/about": "27eb676b3e0e5711",
+    "/chamber/about/requirements": "b26ca004e35717c1",
+    "/chamber/news": "238efb6b2a34ff52",
+    "/mmea": "30f09c2cb4c9fa5b",
+    "/mmea/about": "94498eb127fb5228",
+    "/mmea/about/missions": "3cd5d4fc951f1020",
+    "/mmea/about/platforms": "228a126ffed2c527",
+    "/mmea/about/requirements": "803afd7619c29acc",
+    "/mmea/news": "2a16985c45ba2285"
+  },
+  "pages": [
+    {
+      "content_hash": "c3bfd59f75849915",
+      "direct_url": "https://analogstudies.jsc.nasa.gov/",
+      "mirror_url": "https://oht8woowi8yait9n.github.io/analogstudies/",
+      "priority": "1.0",
+      "route": "/",
+      "title": "NASA Human Research Program \u2014 Flight Analog Subject Recruitment"
+    },
+    {
+      "content_hash": "4ac2ea77696a0eaf",
+      "direct_url": "https://analogstudies.jsc.nasa.gov/chamber",
+      "mirror_url": "https://oht8woowi8yait9n.github.io/analogstudies/chamber",
+      "priority": "0.9",
+      "route": "/chamber",
+      "title": "20-Foot Chamber Analog \u2014 Exploration Atmosphere Study"
+    },
+    {
+      "content_hash": "27eb676b3e0e5711",
+      "direct_url": "https://analogstudies.jsc.nasa.gov/chamber/about",
+      "mirror_url": "https://oht8woowi8yait9n.github.io/analogstudies/chamber/about",
+      "priority": "0.8",
+      "route": "/chamber/about",
+      "title": "About the 20-Foot Chamber Analog & Participant Requirements"
+    },
+    {
+      "content_hash": "b26ca004e35717c1",
+      "direct_url": "https://analogstudies.jsc.nasa.gov/chamber/about/requirements",
+      "mirror_url": "https://oht8woowi8yait9n.github.io/analogstudies/chamber/about/requirements",
+      "priority": "0.9",
+      "route": "/chamber/about/requirements",
+      "title": "20-Foot Chamber \u2014 Human Research Participant Requirements & Exclusion Criteria"
+    },
+    {
+      "content_hash": "238efb6b2a34ff52",
+      "direct_url": "https://analogstudies.jsc.nasa.gov/chamber/news",
+      "mirror_url": "https://oht8woowi8yait9n.github.io/analogstudies/chamber/news",
+      "priority": "0.8",
+      "route": "/chamber/news",
+      "title": "20-Foot Chamber in the News"
+    },
+    {
+      "content_hash": "30f09c2cb4c9fa5b",
+      "direct_url": "https://analogstudies.jsc.nasa.gov/mmea",
+      "mirror_url": "https://oht8woowi8yait9n.github.io/analogstudies/mmea",
+      "priority": "0.9",
+      "route": "/mmea",
+      "title": "Moon & Mars Exploration Analog (MMEA)"
+    },
+    {
+      "content_hash": "94498eb127fb5228",
+      "direct_url": "https://analogstudies.jsc.nasa.gov/mmea/about",
+      "mirror_url": "https://oht8woowi8yait9n.github.io/analogstudies/mmea/about",
+      "priority": "0.85",
+      "route": "/mmea/about",
+      "title": "About MMEA \u2014 Requirements, Platforms & Missions Overview"
+    },
+    {
+      "content_hash": "803afd7619c29acc",
+      "direct_url": "https://analogstudies.jsc.nasa.gov/mmea/about/requirements",
+      "mirror_url": "https://oht8woowi8yait9n.github.io/analogstudies/mmea/about/requirements",
+      "priority": "0.9",
+      "route": "/mmea/about/requirements",
+      "title": "MMEA \u2014 Participant Requirements & Selection Criteria"
+    },
+    {
+      "content_hash": "228a126ffed2c527",
+      "direct_url": "https://analogstudies.jsc.nasa.gov/mmea/about/platforms",
+      "mirror_url": "https://oht8woowi8yait9n.github.io/analogstudies/mmea/about/platforms",
+      "priority": "0.9",
+      "route": "/mmea/about/platforms",
+      "title": "MMEA Platforms \u2014 Transit Vehicle, Surface Habitat & Rover Vehicle"
+    },
+    {
+      "content_hash": "3cd5d4fc951f1020",
+      "direct_url": "https://analogstudies.jsc.nasa.gov/mmea/about/missions",
+      "mirror_url": "https://oht8woowi8yait9n.github.io/analogstudies/mmea/about/missions",
+      "priority": "0.9",
+      "route": "/mmea/about/missions",
+      "title": "MMEA Missions \u2014 Mission Definition, Fidelity, Diet & Crew Schedule"
+    },
+    {
+      "content_hash": "2a16985c45ba2285",
+      "direct_url": "https://analogstudies.jsc.nasa.gov/mmea/news",
+      "mirror_url": "https://oht8woowi8yait9n.github.io/analogstudies/mmea/news",
+      "priority": "0.8",
+      "route": "/mmea/news",
+      "title": "MMEA in the News"
+    },
+    {
+      "content_hash": "1431313ecb31463a",
+      "direct_url": "https://analogstudies.jsc.nasa.gov/apply",
+      "mirror_url": "https://oht8woowi8yait9n.github.io/analogstudies/apply",
+      "priority": "0.95",
+      "route": "/apply",
+      "title": "Application for Analog Missions \u2014 Screening Questionnaire & Privacy Act Statement"
+    }
+  ],
+  "siteOrigin": "https://analogstudies.jsc.nasa.gov"
+}
